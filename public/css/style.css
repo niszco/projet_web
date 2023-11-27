@@ -1,0 +1,26 @@
+body {
+    margin: auto;
+}
+
+#title {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 36px;
+}
+
+#main-header-content {
+    background-color: grey;
+    padding: 1rem 0 1rem 0;
+}
+
+#display-content {
+    margin: 10px 0 0 10px;
+}
+
+#routes {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+}
