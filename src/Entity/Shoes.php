@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ChaussureRepository;
+use App\Repository\ShoesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ChaussureRepository::class)]
-class Chaussure
+#[ORM\Entity(repositoryClass: ShoesRepository::class)]
+class Shoes
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -16,8 +18,8 @@ class Chaussure
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $brand = null;
+    #[ORM\Column(length: 40)]
+    private ?string $type = null;
 
     #[ORM\Column]
     private ?int $price = null;
@@ -25,11 +27,23 @@ class Chaussure
     #[ORM\Column(length: 255)]
     private ?string $description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 30, nullable: true)]
     private ?string $color = null;
 
     #[ORM\Column(length: 255)]
     private ?string $image = null;
+
+    #[ORM\ManyToMany(targetEntity: Size::class, inversedBy: 'shoes')]
+    private Collection $size;
+
+    #[ORM\ManyToOne(inversedBy: 'shoes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Brand $brands = null;
+
+    public function __construct()
+    {
+        $this->size = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -48,16 +62,14 @@ class Chaussure
         return $this;
     }
 
-    public function getBrand(): ?string
+    public function getType(): ?string 
     {
-        return $this->brand;
+        return $this->type;
     }
 
-    public function setBrand(string $brand): static
+    public function setType(string $type): static
     {
-        $this->brand = $brand;
-
-        return $this;
+        $this->type = $type;
     }
 
     public function getPrice(): ?int
@@ -104,6 +116,42 @@ class Chaussure
     public function setImage(string $image): static
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, self>
+     */
+    public function getSize(): Collection
+    {
+        return $this->size;
+    }
+
+    public function addSize(self $size): static
+    {
+        if (!$this->size->contains($size)) {
+            $this->size->add($size);
+        }
+
+        return $this;
+    }
+
+    public function removeSize(self $size): static
+    {
+        $this->size->removeElement($size);
+
+        return $this;
+    }
+
+    public function getBrands(): ?Brand
+    {
+        return $this->brands;
+    }
+
+    public function setBrands(?Brand $brands): static
+    {
+        $this->brands = $brands;
 
         return $this;
     }
