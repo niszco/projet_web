@@ -13,32 +13,29 @@ class Shoes
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
-
-    #[ORM\Column(length: 40)]
-    private ?string $type = null;
+    private ?string $name;
 
     #[ORM\Column]
-    private ?int $price = null;
+    private ?int $price;
 
     #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    private ?string $description;
 
     #[ORM\Column(length: 30, nullable: true)]
-    private ?string $color = null;
+    private ?string $color;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
+    private ?string $image;
 
     #[ORM\ManyToMany(targetEntity: Size::class, inversedBy: 'shoes')]
     private Collection $size;
 
     #[ORM\ManyToOne(inversedBy: 'shoes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Brand $brands = null;
+    private ?Brand $brands;
 
     public function __construct()
     {
@@ -60,16 +57,6 @@ class Shoes
         $this->name = $name;
 
         return $this;
-    }
-
-    public function getType(): ?string 
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): static
-    {
-        $this->type = $type;
     }
 
     public function getPrice(): ?int
@@ -121,14 +108,14 @@ class Shoes
     }
 
     /**
-     * @return Collection<int, self>
+     * @return Collection<int, Size>
      */
     public function getSize(): Collection
     {
         return $this->size;
     }
 
-    public function addSize(self $size): static
+    public function addSize(Size $size): static
     {
         if (!$this->size->contains($size)) {
             $this->size->add($size);
@@ -137,7 +124,7 @@ class Shoes
         return $this;
     }
 
-    public function removeSize(self $size): static
+    public function removeSize(Size $size): static
     {
         $this->size->removeElement($size);
 
