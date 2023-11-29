@@ -13,7 +13,7 @@ class ShoesFixtures extends Fixture implements DependentFixtureInterface
     {
 
         $nikeBrand = $this->getReference(BrandFixtures::BRAND . "Nike");
-        $adidasBrand = $this->getReference(BrandFixtures::BRAND . "Addidas");
+        $vansBrand = $this->getReference(BrandFixtures::BRAND . "Vans");
         $size36 = $this->getReference(SizeFixtures::SIZE . "36");
         $size37 = $this->getReference(SizeFixtures::SIZE . "37");
         $size38 = $this->getReference(SizeFixtures::SIZE . "38");
@@ -22,8 +22,8 @@ class ShoesFixtures extends Fixture implements DependentFixtureInterface
 
         $shoesData = [
 
-            ['Air Max', 120, 'Comfortable running shoes', 'Blue', 'air_max.jpg', $nikeBrand, [$size36, $size37]],
-            ['Superstar', 80, 'Classic casual shoes', 'White', 'superstar.jpg', $adidasBrand, [$size37, $size38]],
+            ['Air Max', 120, 'Comfortable running shoes', 'Blue', 'nike-1.png', $nikeBrand, [$size36, $size37]],
+            ['Ultrarange', 80, 'Classic casual shoes', 'White', 'vans-1.png', $vansBrand, [$size37, $size38]],
             // TODO : Ajouter plus de chaussures !
         ];
 
