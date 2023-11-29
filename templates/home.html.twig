@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block body %}
-    <body>
+    <body >
     <header id="main-header-content">
-        <h1 class="text-center">The Tide Shop</h1>
+        <h1 class="text-center ">The Side Shop</h1>
         <div id="routes" class="row text-center navbar navbar-inverse">
             <a href="{{ path('home') }}" class="col-md-3">Accueil</a>
             <a href="{{ path('shoes') }}" class="col-md-3">Chaussures</a>
-            <a href="" class="col-md-3">Vêtements</a>
+            <a href="{{ path('clothes') }}" class="col-md-3">Vêtements</a>
             <a href="" class="col-md-3">À propos de nous</a>
         </div>
     </header>
@@ -23,6 +23,6 @@
 
 {% block footer %}
     <footer id="main-footer-content">
-
+        <p></p>
     </footer>
 {% endblock %}

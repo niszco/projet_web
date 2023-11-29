@@ -22,8 +22,8 @@ class ShoesFixtures extends Fixture implements DependentFixtureInterface
 
         $shoesData = [
 
-            ['Air Max', 120, 'Comfortable running shoes', 'Orange / Beige / Jaune', 'nike-1.png', $nikeBrand, [$size36, $size37]],
-            ['Ultrarange', 90, 'Classic casual shoes', 'Brun', 'vans-1.png', $vansBrand, [$size37, $size38]],
+            ['Air Max', 120, 'Chaussure stylisé confortable', 'Orange / Beige / Jaune', 'nike-1.png', $nikeBrand, [$size36, $size37]],
+            ['Ultrarange', 90, 'Chaussure de ville', 'Brun', 'vans-1.png', $vansBrand, [$size37, $size38]],
             // TODO : Ajouter plus de Chaussures !
         ];
 

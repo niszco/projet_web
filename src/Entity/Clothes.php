@@ -13,26 +13,29 @@ class Clothes
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $name;
 
     #[ORM\Column]
-    private ?int $price = null;
+    private ?int $price;
 
     #[ORM\Column(length: 255)]
-    private ?string $description = null;
+    private ?string $description;
 
     #[ORM\Column(length: 30, nullable: true)]
-    private ?string $color = null;
+    private ?string $color;
 
     #[ORM\ManyToMany(targetEntity: Size::class, inversedBy: 'clothes')]
     private Collection $size;
 
     #[ORM\ManyToOne(inversedBy: 'clothes')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Brand $brands = null;
+    private ?Brand $brands;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image = null;
 
     public function __construct()
     {
@@ -124,6 +127,18 @@ class Clothes
     public function setBrands(?Brand $brands): static
     {
         $this->brands = $brands;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }

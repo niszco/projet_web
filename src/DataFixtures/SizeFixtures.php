@@ -13,7 +13,7 @@ class SizeFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $sizeData = [
+        $sizeShoesData = [
             '35',
             '36',
             '37',
@@ -33,14 +33,33 @@ class SizeFixtures extends Fixture
             '51'
         ];
 
-        foreach ($sizeData as $sizes) {
+        $sizeClothesData = [
+            'XS',
+            'S',
+            'M',
+            'L',
+            'XL',
+            'XXL',
+            '3XL'
+        ];
+
+        foreach ($sizeShoesData as $sizes) {
             $size = new Size();
             $size
                 ->setName($sizes);
-                
+
             $manager->persist($size);
 
             $this->addReference(self::SIZE . $sizes, $size);
+        }
+            foreach ($sizeClothesData as $sizes) {
+                $size = new Size();
+                $size
+                    ->setName($sizes);
+
+                $manager->persist($size);
+
+                $this->addReference(self::SIZE . $sizes, $size);
         }
         $manager->flush();
     }

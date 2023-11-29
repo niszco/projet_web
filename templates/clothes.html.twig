@@ -8,24 +8,24 @@
     <body>
     <header id="main-header-content">
         <div id="title" class="text-center">
-            <h1 class="text-center">The Tide Shop</h1>
+            <h1 class="text-center">The Side Shop</h1>
         </div>
-        <div id="routes" class="row text-center navbar navbar-inverse">
+        <div id="routes" class="row text-center navbar navbar-dark">
             <a href="{{ path('home') }}" class="col-md-3">Accueil</a>
             <a href="{{ path('shoes') }}" class="col-md-3">Chaussures</a>
-            <a href="" class="col-md-3">Vêtements</a>
+            <a href="{{ path('clothes') }}" class="col-md-3">Vêtements</a>
             <a href="" class="col-md-3">À propos de nous</a>
         </div>
     </header>
     <div id="display-content" class="text-center">
         <div id="main-content-display">
-            <div class="clothe-container">
+            <div class="clothes-container">
                 {% for clothe in clothes %}
-                    <div class="clothe-content">
+                    <div class="clothes-content">
                         <div class="display-image">
                             <img src="{{ asset('assets/' ~ clothe.image) }}" alt="{{ clothe.name }}" width="200px" height="200px">
                         </div>
-                        <div class="shoe-details">
+                        <div class="clothes-details">
                             <h3>{{ clothe.name }}</h3>
                             <p>{{ clothe.description }}</p>
                             <p>Prix: {{ clothe.price }} €</p>
@@ -38,8 +38,8 @@
                             </p>
                         </div>
                         <div class="buttons">
-                            <button class="update-shoe">Mettre à jour cet article</button>
-                            <button class="delete-shoe">Supprimer cet article</button>
+                            <button class="btn btn-default btn-sm">Mettre à jour cet article</button>
+                            <button class="btn btn-default btn-sm">Supprimer cet article</button>
                         </div>
                     </div>
                 {% endfor %}
