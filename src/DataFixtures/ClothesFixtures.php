@@ -23,9 +23,8 @@ class ClothesFixtures extends Fixture implements DependentFixtureInterface
 
 
         $clothesData = [
-
-            ['Sweat à capuche', 120, 'Pullchaud et élégant', 'Ocre', 'carhartt-1.png', $carharttBrand, [$sizeS, $sizeM, $sizeL, $sizeXL]],
             ['Polaire', 90, 'Polaire d\'hiver', 'Noir / Kaki', 'volcom-1.png', $volcomBrand, [$sizeXS, $sizeS, $sizeL]],
+            ['Sweat à capuche', 120, 'Pullchaud et élégant', 'Ocre', 'carhartt-1.png', $carharttBrand, [$sizeS, $sizeM, $sizeL, $sizeXL]],
             // TODO : Ajouter plus de Vêtements !
         ];
 

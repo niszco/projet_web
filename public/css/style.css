@@ -55,3 +55,51 @@ button:hover {
     margin: 1rem;
     border-radius: 20%;
 }
+
+/** Animation pour le scrolling-text **/
+
+#scroll-container {
+    overflow: hidden;
+    padding: 2rem;
+}
+
+#scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+
+    -moz-animation: my-animation 12s linear infinite;
+    -webkit-animation: my-animation 12s linear infinite;
+    animation: my-animation 12s linear infinite;
+
+    font-size: 48px;
+    font-weight: bolder;
+    font-family: "Edwardian Script ITC";
+    color: #B0413E;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+    from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
