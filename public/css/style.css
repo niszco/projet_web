@@ -1,8 +1,33 @@
-.shoe-content {
+body {
+    margin: auto;
+}
+
+h4 {
+    font-size: 48px;
+}
+
+#routes {
+    font-size: 28px;
+    font-weight: lighter;
+}
+
+p {
+
+}
+
+#main-content-display {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+}
+
+.shoe-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shoe-content {
     background-color: #cccccc;
     padding: 2rem;
     margin: 1rem;

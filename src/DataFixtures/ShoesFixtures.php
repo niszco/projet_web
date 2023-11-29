@@ -22,9 +22,9 @@ class ShoesFixtures extends Fixture implements DependentFixtureInterface
 
         $shoesData = [
 
-            ['Air Max', 120, 'Comfortable running shoes', 'Blue', 'nike-1.png', $nikeBrand, [$size36, $size37]],
-            ['Ultrarange', 80, 'Classic casual shoes', 'White', 'vans-1.png', $vansBrand, [$size37, $size38]],
-            // TODO : Ajouter plus de chaussures !
+            ['Air Max', 120, 'Comfortable running shoes', 'Orange / Beige / Jaune', 'nike-1.png', $nikeBrand, [$size36, $size37]],
+            ['Ultrarange', 90, 'Classic casual shoes', 'Brun', 'vans-1.png', $vansBrand, [$size37, $size38]],
+            // TODO : Ajouter plus de Chaussures !
         ];
 
         foreach ($shoesData as [$name, $price, $description, $color, $image, $brand, $sizes]) {
