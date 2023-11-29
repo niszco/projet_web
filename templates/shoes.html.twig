@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+    <body>
+    <header id="main-header-content">
+        <div id="title" class="text-center">
+            <h1 class="text-center">The Tide Shop</h1>
+        </div>
+        <div id="routes" class="row text-center navbar navbar-inverse">
+            <a href="{{ path('home') }}" class="col-md-3">Accueil</a>
+            <a href="{{ path('shoes') }}" class="col-md-3">Chaussures</a>
+            <a href="" class="col-md-3">Vêtements</a>
+            <a href="" class="col-md-3">À propos de nous</a>
+        </div>
+    </header>
+    <div id="display-content" class="text-center">
+        <p>Bienvenue admin !</p>
+        <div id="main-content-display">
+            <div class="shoe-container">
+                {% for shoe in shoes %}
+                    <div class="shoe-content">
+                        <div class="display-image">
+                            <img src="{{ asset('assets/' ~ shoe.image) }}" alt="{{ shoe.name }}" width="200px" height="200px">
+                        </div>
+                        <div class="shoe-details">
+                            <h3>{{ shoe.name }}</h3>
+                            <p>{{ shoe.description }}</p>
+                            <p>Prix: {{ shoe.price }} €</p>
+                            <p>Couleur: {{ shoe.color }}</p>
+                            <p>Marque: {{ shoe.brands.name }}</p>
+                            <p>Tailles disponibles:
+                                {% for size in shoe.size %}
+                                    {{ size.name }}{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div class="buttons">
+                            <button class="update-shoe">Mettre à jour cet article</button>
+                            <button class="delete-shoe">Supprimer cet article</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
+{% block footer %}
+    <footer id="main-footer-content">
+
+    </footer>
+{% endblock %}

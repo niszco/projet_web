@@ -6,15 +6,6 @@ h4 {
     font-size: 48px;
 }
 
-#routes {
-    font-size: 28px;
-    font-weight: lighter;
-}
-
-p {
-
-}
-
 #main-content-display {
     display: flex;
     flex-direction: row;

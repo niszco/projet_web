@@ -21,9 +21,13 @@ class Size
     #[ORM\ManyToMany(targetEntity: Shoes::class, inversedBy: 'sizes')]
     private Collection $shoes;
 
+    #[ORM\ManyToMany(targetEntity: Clothes::class, mappedBy: 'size')]
+    private Collection $clothes;
+
     public function __construct()
     {
         $this->shoes = new ArrayCollection();
+        $this->clothes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -63,6 +67,33 @@ class Size
     public function removeShoe(Shoes $shoe): static
     {
         $this->shoes->removeElement($shoe);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Clothes>
+     */
+    public function getClothes(): Collection
+    {
+        return $this->clothes;
+    }
+
+    public function addClothes(Clothes $clothes): static
+    {
+        if (!$this->clothes->contains($clothes)) {
+            $this->clothes->add($clothes);
+            $clothes->addSize($this);
+        }
+
+        return $this;
+    }
+
+    public function removeClothes(Clothes $clothes): static
+    {
+        if ($this->clothes->removeElement($clothes)) {
+            $clothes->removeSize($this);
+        }
 
         return $this;
     }
