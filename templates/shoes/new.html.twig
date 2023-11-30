@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Shoes{% endblock %}
+{% block title %}The Side Shop{% endblock %}
 
 {% block body %}
-    <h1>Create new Shoes</h1>
+    <body class="text-center">
+    <h1>The Side Shop</h1>
+
+    <p style="font-size: 32px;">Création d'un nouvel article</p>
 
     {{ include('shoes/_form.html.twig') }}
 
-    <a href="{{ path('app_shoes_index') }}">back to list</a>
+    <a href="{{ path('app_shoes_index') }}">Revenir sur la liste des articles</a>
+    </body>
 {% endblock %}

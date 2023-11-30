@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Brand;
 use App\Entity\Shoes;
 use App\Entity\Size;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -22,12 +23,12 @@ class ShoesType extends AbstractType
             ->add('description', TextType::class)
             ->add('color', TextType::class)
             ->add('image', TextType::class)
-            ->add('brands', Brand::class, [
+            ->add('brands', EntityType::class, [
             'class' => Brand::class,
             'choice_label' => 'name',
             'multiple' => false,
             ])
-            ->add('size', Shoes::class, [
+            ->add('size', EntityType::class, [
                 'class' => Size::class,
                 'choice_label' => 'name',
                 'multiple' => true,
