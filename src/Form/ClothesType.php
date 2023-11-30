@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Brand;
 use App\Entity\Clothes;
 use App\Entity\Size;
 use Symfony\Component\Form\AbstractType;
@@ -21,7 +22,11 @@ class ClothesType extends AbstractType
             ->add('description', TextType::class)
             ->add('color', TextType::class)
             ->add('image', TextType::class)
-            ->add('brands', TextType::class)
+            ->add('brands', Brand::class, [
+                'class' => Brand::class,
+                'choice_label' => 'name',
+                'multiple' => false,
+            ])
             ->add('size', Clothes::class, [
                 'class' => Size::class,
                 'choice_label' => 'name',

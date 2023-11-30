@@ -35,7 +35,7 @@ class Clothes
     private ?Brand $brands;
 
     #[ORM\Column(length: 255)]
-    private ?string $image = null;
+    private ?string $image;
 
     public function __construct()
     {

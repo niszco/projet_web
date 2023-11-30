@@ -42,14 +42,6 @@ class ClothesController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_clothes_show', methods: ['GET'])]
-    public function show(Clothes $clothes): Response
-    {
-        return $this->render('clothes/show.html.twig', [
-            'clothes' => $clothes,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'app_clothes_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Clothes $clothes, EntityManagerInterface $entityManager): Response
     {

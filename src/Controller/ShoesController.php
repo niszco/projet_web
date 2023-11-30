@@ -22,7 +22,7 @@ class ShoesController extends AbstractController
         ]);
     }
 
-    #[Route('/add', name: 'app_shoes_add', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_shoes_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $shoe = new Shoes();
@@ -36,7 +36,7 @@ class ShoesController extends AbstractController
             return $this->redirectToRoute('app_shoes_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('shoes/add.html.twig', [
+        return $this->render('shoes/new.html.twig', [
             'shoe' => $shoe,
             'form' => $form,
         ]);
