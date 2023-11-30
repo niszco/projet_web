@@ -38,12 +38,16 @@
                             </p>
                         </div>
                         <div class="btn btn-default btn-sm">
-                            <a href="{{ path('app_clothes_edit', {'id': clothe.id}) }}" >Mettre à jour cet article</a>
-
                             <form action="{{ path('app_clothes_delete', {'id': clothe.id}) }}" method="post" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ clothe.id) }}">
-                                <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer cet article</button>
+                                <button type="submit" class="btn btn-default btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</button>
+                            </form>
+                            <form action="{{ path('app_clothes_edit', {'id': clothe.id}) }}" method="post" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="UPDATE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('update' ~ clothe.id) }}">
+                                <button type="submit" class="btn btn-default btn-sm">Mettre à jour</button>
+                            </form>
                         </div>
                     </div>
                 {% endfor %}

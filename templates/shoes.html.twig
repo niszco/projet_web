@@ -38,12 +38,15 @@
                             </p>
                         </div>
                         <div class="buttons">
-                            <a href="{{ path('app_shoes_edit', {'id': shoe.id}) }}" class="btn btn-default btn-sm">Mettre à jour cet article</a>
-
                             <form action="{{ path('app_shoes_delete', {'id': shoe.id}) }}" method="post" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ shoe.id) }}">
-                                <button type="submit" class="btn btn-default btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer cet article</button>
+                                <button type="submit" class="btn btn-default btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</button>
+                            </form>
+                            <form action="{{ path('app_shoes_edit', {'id': shoe.id}) }}" method="post" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="UPDATE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('update' ~ shoe.id) }}">
+                                <button type="submit" class="btn btn-default btn-sm">Mettre à jour</button>
                             </form>
                         </div>
                     </div>
