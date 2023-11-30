@@ -12,9 +12,9 @@
         </div>
         <div id="routes" class="row text-center navbar navbar-dark">
             <a href="{{ path('home') }}" class="col-md-3">Accueil</a>
-            <a href="{{ path('shoes') }}" class="col-md-3">Chaussures</a>
-            <a href="{{ path('clothes') }}" class="col-md-3">Vêtements</a>
-            <a href="" class="col-md-3">À propos de nous</a>
+            <a href="{{ path('app_shoes_index') }}" class="col-md-3">Chaussures</a>
+            <a href="{{ path('app_clothes_index') }}" class="col-md-3">Vêtements</a>
+            <a href="{{ path('app_clothes_new') }}" class="col-md-3">Ajouter un article</a>
         </div>
     </header>
     <div id="display-content" class="text-center">
@@ -38,8 +38,12 @@
                             </p>
                         </div>
                         <div class="buttons">
-                            <button class="btn btn-default btn-sm">Mettre à jour cet article</button>
-                            <button class="btn btn-default btn-sm">Supprimer cet article</button>
+                            <a href="{{ path('app_clothes_edit', {'id': clothe.id}) }}" class="btn btn-default btn-sm">Mettre à jour cet article</a>
+
+                            <form action="{{ path('app_clothes_delete', {'id': clothe.id}) }}" method="post" style="display: inline-block;">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ clothe.id) }}">
+                                <button type="submit" class="btn btn-default btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer cet article</button>
                         </div>
                     </div>
                 {% endfor %}
