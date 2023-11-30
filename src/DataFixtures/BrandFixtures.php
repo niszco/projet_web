@@ -12,7 +12,7 @@ class BrandFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {   
-        $brands = ["Addidas", "Reebook", "Salomon", "New Balance", "Nike", "Timberland", "Volcom", "Hoka", "Asics", "Vans", "Carhartt"];
+        $brands = ["Adidas", "Reebok", "Salomon", "New Balance", "Nike", "Timberland", "Volcom", "Hoka", "Asics", "Vans", "Carhartt"];
         
         foreach ($brands as $brandName) {
             $brand = new Brand();

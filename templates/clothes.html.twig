@@ -37,13 +37,13 @@
                                 {% endfor %}
                             </p>
                         </div>
-                        <div class="buttons">
-                            <a href="{{ path('app_clothes_edit', {'id': clothe.id}) }}" class="btn btn-default btn-sm">Mettre à jour cet article</a>
+                        <div class="btn btn-default btn-sm">
+                            <a href="{{ path('app_clothes_edit', {'id': clothe.id}) }}" >Mettre à jour cet article</a>
 
                             <form action="{{ path('app_clothes_delete', {'id': clothe.id}) }}" method="post" style="display: inline-block;">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ clothe.id) }}">
-                                <button type="submit" class="btn btn-default btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer cet article</button>
+                                <button type="submit" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer cet article</button>
                         </div>
                     </div>
                 {% endfor %}
@@ -51,9 +51,6 @@
         </div>
     </div>
     </body>
-{% endblock %}
-
-{% block footer %}
     <footer id="main-footer-content">
 
     </footer>
