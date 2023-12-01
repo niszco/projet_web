@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+    <body >
+    <header id="main-header-content">
+        <h1 class="text-center ">The Side Shop</h1>
+        <div id="routes" class="row text-center navbar navbar-inverse">
+            <a href="{{ path('home') }}" class="col-md-3">Accueil</a>
+            <a href="{{ path('app_shoes_index') }}" class="col-md-3">Chaussures</a>
+            <a href="{{ path('app_clothes_index') }}" class="col-md-3">Vêtements</a>
+            <a href="{{ path('about_us') }}" class="col-md-3">À propos de nous</a>
+        </div>
+    </header>
+    <div class="text-justify">
+        <p id="about-us-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing enim eu turpis egestas pretium aenean pharetra. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Consequat id porta nibh venenatis cras sed. Eget nunc scelerisque viverra mauris. Gravida quis blandit turpis cursus in hac habitasse platea dictumst. Eros in cursus turpis massa tincidunt. Vitae purus faucibus ornare suspendisse sed nisi. Ut venenatis tellus in metus vulputate eu scelerisque felis. Sit amet mattis vulputate enim nulla aliquet. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Sit amet commodo nulla facilisi nullam vehicula ipsum a. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Sit amet purus gravida quis blandit turpis cursus in. Aliquam etiam erat velit scelerisque in dictum. Et leo duis ut diam quam nulla porttitor massa. Cursus in hac habitasse platea dictumst quisque.
+
+            Sed arcu non odio euismod lacinia at quis. Semper viverra nam libero justo. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Interdum velit euismod in pellentesque massa placerat duis ultricies lacus. A erat nam at lectus urna duis convallis convallis. Ac auctor augue mauris augue neque gravida in fermentum et. Vel eros donec ac odio. Turpis massa tincidunt dui ut. Varius quam quisque id diam vel quam elementum. Quam pellentesque nec nam aliquam sem et tortor consequat id. Sodales ut etiam sit amet nisl purus in mollis nunc.
+
+            Scelerisque in dictum non consectetur. Fringilla ut morbi tincidunt augue interdum. Lectus arcu bibendum at varius vel pharetra vel turpis nunc. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Ornare arcu dui vivamus arcu felis bibendum. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Diam vel quam elementum pulvinar etiam non quam lacus suspendisse. Gravida rutrum quisque non tellus orci ac auctor augue. Augue mauris augue neque gravida in fermentum et sollicitudin ac. Facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Felis imperdiet proin fermentum leo vel orci porta. Sollicitudin tempor id eu nisl.
+
+            Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Massa eget egestas purus viverra. Morbi tristique senectus et netus et malesuada. Enim facilisis gravida neque convallis a. Ipsum consequat nisl vel pretium. Sed velit dignissim sodales ut eu sem integer. Odio morbi quis commodo odio aenean sed. Sit amet facilisis magna etiam tempor orci eu. Ultricies mi quis hendrerit dolor magna. Placerat vestibulum lectus mauris ultrices eros in cursus turpis. Nunc faucibus a pellentesque sit. Facilisi nullam vehicula ipsum a arcu cursus. Pellentesque elit eget gravida cum sociis. Lorem mollis aliquam ut porttitor leo a diam sollicitudin.
+
+            Euismod lacinia at quis risus sed vulputate odio ut enim. Tortor vitae purus faucibus ornare suspendisse sed nisi. Tellus elementum sagittis vitae et leo. Egestas maecenas pharetra convallis posuere morbi leo urna molestie. Sit amet tellus cras adipiscing enim. At urna condimentum mattis pellentesque id nibh tortor. Massa vitae tortor condimentum lacinia quis vel eros donec. Tristique magna sit amet purus gravida quis blandit turpis cursus. Dignissim enim sit amet venenatis. Metus aliquam eleifend mi in nulla posuere sollicitudin. Non diam phasellus vestibulum lorem sed. Sit amet aliquam id diam maecenas ultricies mi eget mauris. Est sit amet facilisis magna etiam. Magnis dis parturient montes nascetur ridiculus mus. Tristique et egestas quis ipsum suspendisse ultrices. Feugiat scelerisque varius morbi enim nunc. Dictumst quisque sagittis purus sit amet volutpat consequat. Blandit libero volutpat sed cras ornare arcu. Vitae ultricies leo integer malesuada nunc vel risus. Morbi tincidunt augue interdum velit.</p>
+    </div>
+    </body>
+    <footer id="main-footer-content" class="text-center">
+        <span><img src="{{ asset('assets/address-logo.png') }}" alt="Logo adresse" width="15px" height="15px"><p>456 Broome St, New York, NY 10013, United-States</p></span>
+    </footer>
+{% endblock %}

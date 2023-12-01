@@ -12,7 +12,7 @@
             <a href="{{ path('home') }}" class="col-md-3">Accueil</a>
             <a href="{{ path('app_shoes_index') }}" class="col-md-3">Chaussures</a>
             <a href="{{ path('app_clothes_index') }}" class="col-md-3">Vêtements</a>
-            <a href="" class="col-md-3">À propos de nous</a>
+            <a href="{{ path('about_us') }}" class="col-md-3">À propos de nous</a>
         </div>
     </header>
     <div id="scroll-container">
@@ -24,7 +24,7 @@
         <img id="storefront" class="figure-img mx-auto d-block" src="{{ asset('assets/clothes-shop-storefront.png') }}" alt="Façade de notre magasin en photo">
     </div>
     </body>
-    <footer id="main-footer-content">
-
+    <footer id="main-footer-content" class="text-center">
+        <span><img src="{{ asset('assets/address-logo.png') }}" alt="Logo adresse" width="15px" height="15px"><p>456 Broome St, New York, NY 10013, United-States</p></span>
     </footer>
 {% endblock %}

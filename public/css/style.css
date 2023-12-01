@@ -32,6 +32,10 @@ button:hover {
     justify-content: space-around;
 }
 
+#about-us-text {
+    padding: 15px;
+}
+
 .shoe-container {
     display: flex;
     flex-wrap: wrap;
