@@ -26,14 +26,10 @@ button:hover {
 }
 
 #main-content-display {
-    display: flex;
+    display: inline-grid;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-}
-
-#about-us-text {
-    padding: 15px;
 }
 
 .shoe-container {
